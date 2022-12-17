@@ -1,0 +1,41 @@
+{
+	"name": "Data Pipeline to load Agency into the Synapse Analytics",
+	"properties": {
+		"activities": [
+			{
+				"name": "Data Flow to load Agency to Synapse",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "Data flows to load Agency from the data lake files into the Synapse Analytics",
+						"type": "DataFlowReference"
+					},
+					"staging": {
+						"linkedService": {
+							"referenceName": "ls_data_lake",
+							"type": "LinkedServiceReference"
+						},
+						"folderPath": "adlsnycpayroll-tuankiet-l/dirstaging"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2022-12-17T05:29:57Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

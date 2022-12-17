@@ -1,0 +1,9 @@
+{
+	"name": "nycpayroll-df",
+	"location": "southeastasia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "49b7996f-983b-47c0-9002-17e466660d86",
+		"tenantId": "9b7cbd77-6d6b-4879-8aba-63d7dfb18472"
+	}
+}
